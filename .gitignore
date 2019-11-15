@@ -24,3 +24,5 @@ yarn-error.log*
 
 rationale.md
 **/*.swp
+firebase-debug.log
+.firebase/

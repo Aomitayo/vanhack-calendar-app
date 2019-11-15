@@ -1,5 +1,7 @@
 # Vanhack Calendar Page
 *This is was a submission to [Vanhack](https://www.vanhack.com/[) for vanhackathon 2019*
+[click here](https://vanhack-calendar-b86f3.firebaseapp.com) to view a working
+demo.
 
 ## Why
 VanHack needs a better way to display to candidates the events (both online and presential) happening at VanHack. You can check our current event’s page [here](https://vanhack.com/platform/#/events). Events may include webinars (Premium and non-Premium), Leaps, Recruiting missions, Q&A Sessions, VanHackathons, Meetups and others.
