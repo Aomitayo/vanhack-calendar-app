@@ -1,5 +1,8 @@
 # Vanhack Calendar Page
+[![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
+
 *This is was a submission to [Vanhack](https://www.vanhack.com/[) for vanhackathon 2019*
+
 [click here](https://vanhack-calendar-b86f3.firebaseapp.com) to view a working
 demo.
 
