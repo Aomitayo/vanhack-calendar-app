@@ -2,7 +2,7 @@
 [![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
 
 *This is was a submission to [Vanhack](https://www.vanhack.com/[) for vanhackathon 2019*
-see [The Charter](#The Charter) for the details of the challenge.
+see [The Charter](#the-charter) for the details of the challenge.
 
 [click here](https://vanhack-calendar-b86f3.firebaseapp.com) to view a working
 demo.
@@ -16,7 +16,7 @@ You do not actually need to install the app to view it. Just [click here](https:
 - Vanhack Staff
 
 If you would still like to run the solution then see [Install and run](#install
-and run) below.
+-and-run) below.
 
 ### Install and run
 
