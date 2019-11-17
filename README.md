@@ -1,7 +1,7 @@
 # Vanhack Calendar Page
 [![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
 
-*This is was a submission to [Vanhack](https://www.vanhack.com/[) for vanhackathon 2019*
+*This is was a submission to [Vanhack](https://www.vanhack.com) for vanhackathon 2019*
 see [The Charter](#the-charter) for the details of the challenge.
 
 [click here](https://vanhack-calendar-b86f3.firebaseapp.com) to view a working
@@ -15,8 +15,7 @@ You do not actually need to install the app to view it. Just [click here](https:
 - Premium Candidate
 - Vanhack Staff
 
-If you would still like to run the solution then see [Install and run](#install
--and-run) below.
+If you would still like to run the solution then see [Install and run](#install-and-run) below.
 
 ### Install and run
 
@@ -28,6 +27,8 @@ A lightweight [React.js]() app
 ### Backend API
 The backend api was implemented as a serverless [Express.js]() app/microservice
 hosted on [firebase]() using cloud functions
+
+You an view the API specifications and tests  [here](functions/api-spec.apib)
 
 ## Some Implementation Details
 
