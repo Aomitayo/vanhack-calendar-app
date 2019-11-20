@@ -1,4 +1,9 @@
-import React, { useState } from 'react'
+/* globals sessionStorage */
+import React, { useState, useEffect } from 'react'
+
+const userSessionKey = 'vanhackathon2019_user'
+const storeUser = (user) => sessionStorage.setItem(userSessionKey, JSON.stringify(user))
+const getStoredUser = () => JSON.parse(sessionStorage.getItem(userSessionKey) || 'null')
 
 const AuthContext = React.createContext()
 
@@ -9,11 +14,13 @@ export default AuthContext
 const anonymousUser = {
   name: 'Guest',
   isAnonymous: true,
-  roles:[]
+  roles: []
 }
 
 function AuthProvider (props) {
-  const [user, setUser] = useState(anonymousUser)
+  const [user, setUser] = useState(
+    getStoredUser() || anonymousUser
+  )
   const [loginInProgress, setLoginInProgress] = useState(false)
   const [loginFailed, setLoginFailed] = useState(false)
   const [reasonLoginFailed, setReasonLoginFailed] = useState(null)
@@ -39,6 +46,10 @@ function AuthProvider (props) {
   }
 
   const hasRole = (role) => (user.roles || []).indexOf(role) !== -1
+
+  useEffect(() => {
+    storeUser(user)
+  }, [user])
 
   return (
     <AuthContext.Provider value={{ user, loginInProgress, loginFailed, reasonLoginFailed, hasRole, login, logout }}>
@@ -66,5 +77,5 @@ const doLogin = (username, password) => {
 const fakeUsers = {
   candidate: { name: 'John Candidate', email: 'john@example.com', password: 'john' },
   premiumCandidate: { name: 'Martha Moneypenny', email: 'martha@workplace.com', password: 'martha' },
-  staff: { name: 'Santiago Cto', email: 'tiago@vanhack.com', password: 'tiago.cto' }
+  staff: { name: 'Tiago Cto', email: 'tiago@vanhack.com', password: 'tiago' }
 }
