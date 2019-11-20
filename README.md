@@ -12,8 +12,14 @@ demo.
 You do not actually need to install the app to view it. Just [click here](https://vanhack-calendar-b86f3.firebaseapp.com) to view a working demo. You can login using any one of the following roles:
 
 - Regular Candidate
+    username: john@example.com
+    password: john
 - Premium Candidate
+    username: martha@workplace.com
+    password: martha
 - Vanhack Staff
+    username: tiago@vanhack.com
+    password: tiago
 
 If you would still like to run the solution then see [Install and run](#install-and-run) below.
 
