@@ -12,12 +12,17 @@ demo.
 You do not actually need to install the app to view it. Just [click here](https://vanhack-calendar-b86f3.firebaseapp.com) to view a working demo. You can login using any one of the following roles:
 
 - Regular Candidate
+
     username: john@example.com
     password: john
+
 - Premium Candidate
+
     username: martha@workplace.com
     password: martha
+
 - Vanhack Staff
+
     username: tiago@vanhack.com
     password: tiago
 
@@ -44,15 +49,36 @@ Open your web browser and navigate to http://localhost:3000
 ## Design and Architecture
 
 ### Frontend App
-A lightweight [React.js]() app
-*No redux, not component library just react & [tailwind](https://tailwindcss.com/)*
+A lightweight [React.js]() app.
+*No redux, not component library just react & [tailwindcss](https://tailwindcss.com/)*
 
+The key idea for the solution is to provide:
+
+1. Improved presentation of event cards, with adequate highlighting of event
+   types (Leap, Vanhackathon, premium only)
+2. Navigation controls for present, past and future events on vanhacks calender
+3. Affordances for context-sensitive (event and user) actions including
+  - Apply - for events that require an application
+  - Attend - for registered vanhackers to signify their intention to
+      participate - interview practice for instance
+  - Join - For attendees to go straight to a zoom meeting where applicable
+  - Join vanhack premium - for non-premium users to join vanhack premium
 
 ### Backend API
-The backend api was implemented as a serverless [Express.js]() app/microservice
-hosted on [firebase]() using cloud functions
 
-You an view the API specifications and tests  [here](functions/api-spec.apib)
+The backend api was intended as a serverless microservice to be hosted on
+[firebase]() using an [Express.js]() app implemented as a cloud function.
+
+Time constraints did not allow for much progress on this aspect, so most of the
+functionality is still implemented in the front end.
+
+However, the skeleton for the backend can be found in the [functions](functions/)
+sub-directory of this repository. The preliminary API specifications written in
+[ApiBlueprint] syntax can be found [here](functions/api-spec.apib).
+
+The ApiBluePrint syntax and [Dredd] have also been setup as the test system for
+the api. See [events.apib](functions/tests/events.apib) and
+[hooks.js](functions/hooks.js) for some insight.
 
 ## Some Implementation Details
 
