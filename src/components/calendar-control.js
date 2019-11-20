@@ -44,13 +44,12 @@ export default ({ dateRange, setDateRange, perspective, setPerspective }) => {
           <i className='fa fa-chevron-circle-right' />
         </span>
       </span>
-      <div className='ml-4 cursor-pointer relative group' onClick={openCalendarControlMenu}>
+      <div className='ml-4 cursor-pointer relative group w-48' onClick={openCalendarControlMenu}>
         <DateRangeLabel {...dateRange} /> <i className='fa fa-chevron-down' />
         <div className='items-center absolute border border-t-0 rounded-b-lg p-1 bg-white p-2 invisible group-hover:visible w-full'>
-          <a href='#asdads' className='px-4 py-2 block text-black hover:bg-grey-lighter'>View Profile</a>
-          <a href='#asdfdsf' className='px-4 py-2 block text-black hover:bg-grey-lighter'>Edit Profile</a>
-          <hr className='border-t mx-2 border-grey-ligght' />
-          <a href='#asfasf' className='px-4 py-2 block text-black hover:bg-grey-lighter'>Logout</a>
+          <a href='#asdads' className='px-4 py-2 block text-black hover:bg-gray-300'>Today</a>
+          <a href='#asdfdsf' className='px-4 py-2 block text-black hover:bg-gray-300'>This Week</a>
+          <a href='#asfasf' className='px-4 py-2 block text-black hover:bg-gray-300'>This Month</a>
         </div>
       </div>
     </div>

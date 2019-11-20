@@ -4,7 +4,7 @@ import 'firebase/firestore'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './style.css'
-import '@fortawesome/fontawesome-free/css/all.css'
+import '@fortawesome/fontawesome-free/js/all.js'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
 

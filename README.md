@@ -49,7 +49,7 @@ $ npm run serve
 
 Open your web browser and navigate to http://localhost:3000
 
-## Design Architecture and completion status
+## Design, Architecture and completion status
 
 ### Frontend App
 A lightweight [React.js]() app.
@@ -59,7 +59,7 @@ The key idea for the solution is to provide:
 
 1. Improved presentation of event cards, with adequate highlighting of event
    types (Leap, Vanhackathon, premium only)
-2. Navigation controls for present, past and future events on vanhacks calender
+2. Navigation controls for present, past and future events on vanhack's calender
 3. Affordances for context-sensitive (event and user) actions including
   - Apply - for events that require an application
   - Attend - for registered vanhackers to signify their intention to
@@ -68,6 +68,18 @@ The key idea for the solution is to provide:
   - Join vanhack premium - for non-premium users to join vanhack premium
 
 #### Frontend status
+- Visual design was made to be reasonably close to vanhack's current style.
+- The event navigation control is provided as a Sticky that appears when the user
+scrolls
+- Context sensitive event card actions are provided on the event cards
+
+In general, the front end app was an excercise in applying tailwindcss to styling
+a react app whilst making extensive use of react hooks and Functional components.
+It required implementing a [fork](https://www.npmjs.com/package/@aomitayo/tailwind-react-scripts)
+of [react scripts](https://www.npmjs.com/package/react-scripts) to prevent
+ejecting from [cra](https://www.npmjs.com/package/react-scripts) which was used
+to scaffold the app.
+
 
 ### Backend API
 

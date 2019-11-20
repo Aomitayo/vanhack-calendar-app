@@ -63,7 +63,7 @@ export default () => {
       <div ref={stickyRef} className='container mx-auto z-50'>
         {
           !stuckToTop && <div className='bg-white'>
-            <div className="container mx-auto">
+            <div className='container mx-auto'>
               <div className='h-12 p-3 font-bold text-xl '>
                 Happening here on Vanhack!
               </div>
