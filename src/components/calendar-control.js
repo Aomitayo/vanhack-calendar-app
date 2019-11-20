@@ -35,7 +35,7 @@ export default ({ dateRange, setDateRange, perspective, setPerspective }) => {
     console.log('openCalendarControlMenu')
   }
   return (
-    <div className='calendar-control w-full h-14 p-3 flex justify-start items-center bg-white'>
+    <div className='calendar-control w-full h-12 p-3 flex justify-start items-center bg-white'>
       <span className=''>
         <span className='cursor-pointer inline-block m-1' onClick={setPreviousDateRange}>
           <i className='fa fa-chevron-circle-left' />

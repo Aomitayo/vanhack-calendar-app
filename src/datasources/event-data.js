@@ -28,7 +28,7 @@ const events = [
     end: new Date('22-November-2019'),
     location: 'Zoom',
     locationFlag: 'https://vanhackblobstorageprod.blob.core.windows.net/flags/canada.svg',
-    deadline: new Date('11/03/2019')
+    premiumOnly: true,
   },
   {
     id: chance.guid(),
@@ -39,7 +39,7 @@ const events = [
     end: new Date('22-November-2019'),
     location: 'Zoom',
     locationFlag: 'https://vanhackblobstorageprod.blob.core.windows.net/flags/canada.svg',
-    deadline: new Date('11/03/2019')
+    premiumOnly: true,
   },
   {
     id: chance.guid(),
@@ -50,6 +50,7 @@ const events = [
     end: new Date('22-November-2019'),
     location: 'Vancouver - Canada',
     locationFlag: 'https://vanhackblobstorageprod.blob.core.windows.net/flags/canada.svg',
+    requiresApplication: true,
     deadline: new Date('11/03/2019')
   },
   {
@@ -61,6 +62,7 @@ const events = [
     end: new Date('04-December-2019'),
     location: 'Vancouver - Canada',
     locationFlag: 'https://vanhackblobstorageprod.blob.core.windows.net/flags/canada.svg',
+    requiresApplication: true,
     deadline: new Date('11/30/2019')
   },
   {
@@ -72,6 +74,7 @@ const events = [
     end: new Date('06-February-2020'),
     location: 'Toronto - Canada',
     locationFlag: 'https://vanhackblobstorageprod.blob.core.windows.net/flags/canada.svg',
+    requiresApplication: true,
     deadline: new Date('01/25/2020')
   },
   {
@@ -83,6 +86,7 @@ const events = [
     end: new Date('27-February-2020'),
     location: 'Calgary - Canada',
     locationFlag: 'https://vanhackblobstorageprod.blob.core.windows.net/flags/canada.svg',
+    requiresApplication: true,
     deadline: new Date('02/10/2020')
   },
   {
@@ -94,6 +98,7 @@ const events = [
     end: new Date('08-March-2020'),
     location: 'Medellín - Colombia',
     locationFlag: 'https://vanhackblobstorageprod.blob.core.windows.net/flags/canada.svg',
+    requiresApplication: true,
     deadline: new Date('02/14/2020')
   },
   {
@@ -105,6 +110,7 @@ const events = [
     end: new Date('12-March-2020'),
     location: 'Montréal - Canada',
     locationFlag: 'https://vanhackblobstorageprod.blob.core.windows.net/flags/canada.svg',
+    requiresApplication: true,
     deadline: new Date('03/01/2020')
   },
   {
@@ -116,6 +122,7 @@ const events = [
     end: new Date('2-April-2020'),
     location: 'Vancouver - Canada',
     locationFlag: 'https://vanhackblobstorageprod.blob.core.windows.net/flags/canada.svg',
+    requiresApplication: true,
     deadline: new Date('03/08/2020')
   },
   {

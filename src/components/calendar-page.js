@@ -1,5 +1,5 @@
 import React, { useState, Fragment, useContext } from 'react'
-import AuthContext from '../auth-context'
+import EventCard from '../components/event-card'
 import AppBar from '../components/appbar'
 import CalendarControl from './calendar-control'
 import useInfiniteScroll from '../hooks/use-infinite-scroll'
@@ -40,10 +40,10 @@ export default () => {
       ref={element => setScroller(element)} onScroll={handleScroll}
     >
       <AppBar />
-      <div className='container mx-auto mb-4 shadow br-1 flex flex-col'>
-        <img className='w-full'
+      <div className='hero-event container mx-auto mb-4 shadow br-1 flex flex-col relative z-0'>
+        <img className='w-full z-0'
           src='https://vanhackblobstorageprod.blob.core.windows.net/img/events/cover/relocation-summit-2019.png' alt='' />
-        <div className='flex flex-row justify-start items-center p-4'>
+        <div className='flex flex-row justify-start items-center p-4 absolute bottom-0 bg-white w-full'>
           <img className='mr-6 ml-1'
             src='https://vanhackblobstorageprod.blob.core.windows.net/flags/canada.svg' alt='flag' />
           <div className='flex flex-col lg:flex-row lg:items-center lg:justify-between'>
@@ -60,21 +60,35 @@ export default () => {
         </div>
       </div>
 
-      <div ref={stickyRef} className='container mx-auto'>
-        <div className={(stuckToTop ? 'fixed top-0 left-0 w-screen bg-white' : 'w-full')}>
-          <div className='container mx-auto'>
-            <CalendarControl {...{ dateRange, setDateRange, perspective, setPerspective }} />
+      <div ref={stickyRef} className='container mx-auto z-50'>
+        {
+          !stuckToTop && <div className='bg-white'>
+            <div className="container mx-auto">
+              <div className='h-12 p-3 font-bold text-xl '>
+                Happening here on Vanhack!
+              </div>
+            </div>
           </div>
-        </div>
+        }
+        {
+          stuckToTop &&
+          <div className={(stuckToTop ? 'fixed top-0 left-0 w-screen bg-white' : 'w-full')}>
+            <div className='container mx-auto'>
+              <CalendarControl {...{ dateRange, setDateRange, perspective, setPerspective }} />
+            </div>
+          </div>
+        }
       </div>
 
       <div
-        className='p-3 flex-grow md:flex items-start flex-wrap expand container mx-auto'
+        className='p-2 flex-grow md:flex items-start flex-wrap expand container mx-auto'
       >
 
         {items.map(item => (
           <Fragment key={item.id} >
-            <Event event={item} />
+            <div className='event md:w-1/2 lg:w-1/4 flex-none py-6  md:p-3'>
+              <EventCard event={item} />
+            </div>
           </Fragment>
         ))}
         { isLoading && <LoadingNotification /> }
@@ -83,34 +97,10 @@ export default () => {
   )
 }
 
-const Event = ({ event }) => {
-  const { hasRole } = useContext(AuthContext)
-
-  return (
-    <div className='event md:w-1/3 lg:w-1/4 flex-none'>
-      <div className='event-wrapper my-6  md:m-3 shadow bg-white' >
-        <div className='event-banner'>
-          <img src={event.photo} alt='' />
-        </div>
-        <div className='event-summary p-3'>
-          <div className='name'>{event.name}</div>
-          <div className='date'>{event.start.toString()}</div>
-          <div className='location'>{event.location}</div>
-        </div>
-        {
-          hasRole('premiumCandidate')
-          ? <button className='btn'>Attend</button>
-            : <button className='btn'>Sign Up for Premium</button>
-        }
-      </div>
-    </div>
-  )
-}
-
 const LoadingNotification = () => {
   return (
     <div className='h-14 bg-white w-full fixed bottom-0 p-3 flex flex-row items-center justify-center'>
-      <span className='fa-2x mr-3'><i className='fa fa-circle-notch fa-pulse text-blue-500'></i></span> Loading...
+      <span className='fa-2x mr-3'><i className='fa fa-circle-notch fa-pulse text-blue-500' /></span> Loading...
     </div>
   )
 }

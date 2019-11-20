@@ -8,7 +8,7 @@
 
 @media (max-width: 768px) {
   .container {
-    max-width: 100%;
+    /*max-width: 100%;*/
   }
 }
 
@@ -34,6 +34,27 @@ input.error {
 .btn:hover {
   @apply bg-blue-700;
 }
+
+.btn-event-action {
+  @apply bg-blue-500 text-white font-bold text-sm leading-tight py-1 px-4 m-1 rounded;
+}
+
+.btn-event-action:focus {
+  @apply outline-none shadow-outline;
+}
+
+.btn-event-action:hover {
+  @apply bg-blue-700;
+}
+
+.btn-event-action.premium {
+  @apply bg-green-500;
+}
+
+.btn-event-action.premium:hover {
+  @apply bg-green-700;
+}
+
 @tailwind utilities;
 
 body {
