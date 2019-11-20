@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 
 export default (dataSource) => {
   const scrollerRef = useRef()
-  const [cursor, setCursor] = useState({count: -1, offset: 0, limit: 4})
+  const [cursor, setCursor] = useState({count: -1, offset: -4, limit: 4})
   const [isAtBottom, setIsAtBottom] = useState(true)
   const [items, setItems] = useState([])
   const [isLoading, setIsLoading] = useState(false)

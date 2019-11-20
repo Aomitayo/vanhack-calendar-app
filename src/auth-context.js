@@ -38,10 +38,7 @@ function AuthProvider (props) {
     setUser(anonymousUser)
   }
 
-  const hasRole = (role) => {
-    (user.roles || []).contains(role)
-    return false
-  }
+  const hasRole = (role) => (user.roles || []).indexOf(role) !== -1
 
   return (
     <AuthContext.Provider value={{ user, loginInProgress, loginFailed, reasonLoginFailed, hasRole, login, logout }}>
@@ -67,7 +64,7 @@ const doLogin = (username, password) => {
 }
 
 const fakeUsers = {
-  candidate: { name: 'John Candidate', email: 'john.candidate@example.com', password: 'john.candidate' },
-  premiumCandidate: { name: 'Jason Platinum', email: 'jason.platinum@workplace.com', password: 'jason.platinum' },
-  staff: { name: 'Santiago Cto', email: 'tiago.cto@vanhack.com', password: 'tiago.cto' }
+  candidate: { name: 'John Candidate', email: 'john@example.com', password: 'john' },
+  premiumCandidate: { name: 'Martha Moneypenny', email: 'martha@workplace.com', password: 'martha' },
+  staff: { name: 'Santiago Cto', email: 'tiago@vanhack.com', password: 'tiago.cto' }
 }

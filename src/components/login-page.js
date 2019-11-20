@@ -1,10 +1,16 @@
 import React, { useContext, useState } from 'react'
+import { Redirect } from 'react-router-dom'
 import AuthContext from '../auth-context'
 
 export default (props) => {
-  const { loginInProgress, loginFailed, reasonLoginFailed, login } = useContext(AuthContext)
+  const { from } = props.location.state || { from: { pathname: '/' } }
+  const { user, loginInProgress, loginFailed, reasonLoginFailed, login } = useContext(AuthContext)
   const [ username, setUsername ] = useState('')
   const [ password, setPassword ] = useState('')
+
+  if (user && !user.isAnonymous) {
+    return <Redirect to={from} />
+  }
 
   return (
     <div

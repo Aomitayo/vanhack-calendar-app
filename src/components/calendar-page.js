@@ -1,4 +1,5 @@
-import React, { useState, Fragment } from 'react'
+import React, { useState, Fragment, useContext } from 'react'
+import AuthContext from '../auth-context'
 import AppBar from '../components/appbar'
 import CalendarControl from './calendar-control'
 import useInfiniteScroll from '../hooks/use-infinite-scroll'
@@ -83,17 +84,24 @@ export default () => {
 }
 
 const Event = ({ event }) => {
+  const { hasRole } = useContext(AuthContext)
+
   return (
     <div className='event md:w-1/3 lg:w-1/4 flex-none'>
       <div className='event-wrapper my-6  md:m-3 shadow bg-white' >
         <div className='event-banner'>
-          <img src='https://via.placeholder.com/480x270' alt='' />
+          <img src={event.photo} alt='' />
         </div>
         <div className='event-summary p-3'>
           <div className='name'>{event.name}</div>
-          <div className='date'> November 20, 2019 4PM (PST)</div>
-          <div className='location'>Zoom</div>
+          <div className='date'>{event.start.toString()}</div>
+          <div className='location'>{event.location}</div>
         </div>
+        {
+          hasRole('premiumCandidate')
+          ? <button className='btn'>Attend</button>
+            : <button className='btn'>Sign Up for Premium</button>
+        }
       </div>
     </div>
   )
