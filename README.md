@@ -14,19 +14,22 @@ You do not actually need to install the app to view it. Just [click here](https:
 - Regular Candidate
 
     username: john@example.com
+
     password: john
 
 - Premium Candidate
 
     username: martha@workplace.com
+
     password: martha
 
 - Vanhack Staff
 
     username: tiago@vanhack.com
+
     password: tiago
 
-If you would still like to run the solution then see [Install and run](#install-and-run) below.
+If you would still like to run the solution on your computer then see [Install and run](#install-and-run) below.
 
 ### Install and run
 
@@ -46,7 +49,7 @@ $ npm run serve
 
 Open your web browser and navigate to http://localhost:3000
 
-## Design and Architecture
+## Design Architecture and completion status
 
 ### Frontend App
 A lightweight [React.js]() app.
@@ -64,10 +67,14 @@ The key idea for the solution is to provide:
   - Join - For attendees to go straight to a zoom meeting where applicable
   - Join vanhack premium - for non-premium users to join vanhack premium
 
+#### Frontend status
+
 ### Backend API
 
-The backend api was intended as a serverless microservice to be hosted on
-[firebase]() using an [Express.js]() app implemented as a cloud function.
+The backend api was intended as a serverless microservice to be hosted on the
+[firebase platform]() using an [Express.js]() app implemented as a cloud function.
+
+#### Backend status
 
 Time constraints did not allow for much progress on this aspect, so most of the
 functionality is still implemented in the front end.
@@ -79,6 +86,9 @@ sub-directory of this repository. The preliminary API specifications written in
 The ApiBluePrint syntax and [Dredd] have also been setup as the test system for
 the api. See [events.apib](functions/tests/events.apib) and
 [hooks.js](functions/hooks.js) for some insight.
+
+Appropriate next steps will be to complete the implementation and the automated
+tests.
 
 ## Some Implementation Details
 
