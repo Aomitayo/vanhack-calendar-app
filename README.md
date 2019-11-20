@@ -25,10 +25,28 @@ If you would still like to run the solution then see [Install and run](#install-
 
 ### Install and run
 
+Clone the repository
+```
+$ git clone git@github.com:Aomitayo/vanhack-calendar-app.git aomitayo-vanhackathon2019-submission
+```
+
+Change to the working directory and install dependencies
+```
+$ cd aomitayo-vanhackathon2019-submission && npm install
+```
+Run the app
+```
+$ npm run serve
+```
+
+Open your web browser and navigate to http://localhost:3000
+
 ## Design and Architecture
 
 ### Frontend App
 A lightweight [React.js]() app
+*No redux, not component library just react & [tailwind](https://tailwindcss.com/)*
+
 
 ### Backend API
 The backend api was implemented as a serverless [Express.js]() app/microservice
