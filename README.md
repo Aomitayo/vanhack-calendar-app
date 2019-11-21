@@ -83,7 +83,7 @@ of [react scripts](https://www.npmjs.com/package/react-scripts) to prevent
 ejecting from [cra](https://www.npmjs.com/package/react-scripts) which was used
 to scaffold the app.
 
-All code written in functional Es6 all the way -- NO CLASSES :fist
+All code written in functional Es6 all the way -- NO CLASSES :fist:
 
 Next steps would be to complete the features and write tests.
 
