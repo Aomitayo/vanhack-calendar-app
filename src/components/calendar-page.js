@@ -1,4 +1,4 @@
-import React, { useState, Fragment, useContext } from 'react'
+import React, { useState, Fragment } from 'react'
 import EventCard from '../components/event-card'
 import AppBar from '../components/appbar'
 import CalendarControl from './calendar-control'
@@ -60,7 +60,7 @@ export default () => {
         </div>
       </div>
 
-      <div ref={stickyRef} className='container mx-auto z-50'>
+      <div ref={stickyRef} className='sticky-container container mx-auto z-50 relative' >
         {
           !stuckToTop && <div className='bg-white'>
             <div className='container mx-auto'>
@@ -72,7 +72,7 @@ export default () => {
         }
         {
           stuckToTop &&
-          <div className={(stuckToTop ? 'fixed top-0 left-0 w-screen bg-white' : 'w-full')}>
+          <div className={(stuckToTop ? 'sticky-bar fixed top-0 left-0 w-screen bg-white' : 'w-full')}>
             <div className='container mx-auto'>
               <CalendarControl {...{ dateRange, setDateRange, perspective, setPerspective }} />
             </div>

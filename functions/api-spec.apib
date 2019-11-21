@@ -5,61 +5,71 @@ FORMAT: 1A
 Vanhack-calendar-api is the backend API for the vanhack-calendar-app submitted by
 Adedayo Omitayo <adedayo.omitayo@gmail.com> for vanhackathon 2019.
 
-# Group auth
-Resources related to authentication
-/api/login
-/api/logout
+# API Root [/api]
+The api root. This resource does not have any attributes
+
+## Group Events
+Resources related to events on vanhack's calendar
+
+## Events collection [/api/events]
+The collection of events on Vanhack's calendar
+
+## Event [api/events/{event_id}]
+A resource representing an event on **vanhack's** calendar. It is structured as
+
++ Attributes (Event)
+
++ Parameters
+  + event_id: (required, string) - The unique identifier for the event
+
+### Retrieve the Event [GET]
+
+### Update the event [PUT]
+
+### Delete the Event [DELETE]
+
+## Participant Collection /api/events/{event_id}/{participant_role}
+The collection of participants in an event
+
+## Current User's events /api/@me/events
+The list of events in which the current user is a participant
+
+# Group  Applications
+Resources related to applications to events and jobs made by candidates
+
+## Application Collection [/api/applications]
+The collection of applications to events or jobs
+
+## Application [/api/applications/{application_id}]
+A candidate's application to an event or job
+
 
 # Group @me
 Resources related to the currently logged-in user
 
 ## The Current user's profile [/api/@me]
 
-# Group Events
-Resources related to events on vanhack's calendar
+## The current user's applications to jobs or events [/api/@me/applications]
 
+# Group auth
+Resources related to authentication
+/api/login
+/api/logout
 
-## Event api/events/{event_id}
-An event on vanhack's calendar. It is structured as
+# Data Structures
 
-- id: (String, required) - The unique identifier for the event
-- eventTypes: () The type of event it is should be one of webinar, Q&A session,
+## Event
+
++ id: (String, required) - The unique identifier for the event
++ eventTypes: () The type of event it is should be one of webinar, Q&A session,
    Leap, Recruitment Mission, Job Fair, VanHackathon, Meetup
-- Name: String
-- Location: String, Coordinates, location avatar/logo
-- startDate: The date the event is slated to start
-- endDate: The date the event is to end
-- image: (url) - The url for the thumbnail image
-- requiresApplication: boolean
-- applicationDeadline
-- description: Long text
-- agenda: *how to handle this for recurring events*
++ Name: String
++ Location: String, Coordinates, location avatar/logo
++ startDate: The date the event is slated to start
++ endDate: The date the event is to end
++ image: (url) - The url for the thumbnail image
++ requiresApplication: boolean
++ applicationDeadline
++ description: Long text
++ agenda: *how to handle this for recurring events*
 
-/api/events
-/api/events/{event_id}/{participant_role}
-/api/@me/events
-
-# Group  Applications
-Resources related to applications to events and jobs made by candidates
-
-## Application [/api/applications/{application_id}]
-A candidate's application to an event or job
-
-/api/applications
-/api/@me/applications
-
-## endpoints
-/api  - api root
-
-
-
-## Data structures
-
-### EventType
-
-
-### Event
-
-#### Properties
-
-### Application

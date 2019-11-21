@@ -55,6 +55,13 @@ input.error {
   @apply bg-green-700;
 }
 
+.sticky-bar {
+  -webkit-transform: translate3d(0,0,0);
+}
+
+.sticky-container {
+  height: 56px
+}
 @tailwind utilities;
 
 body {
