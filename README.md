@@ -71,7 +71,10 @@ The key idea for the solution is to provide:
 - Visual design was made to be reasonably close to vanhack's current style.
 - The event navigation control is provided as a Sticky that appears when the user
 scrolls
-- Context sensitive event card actions are provided on the event cards
+- Context sensitive event card actions are presented on the event cards
+    based on the type of event and the current user. Time constraints did not
+    allow for implementing the actual actions. Just the presentation logic for
+    the action buttons.
 
 In general, the front end app was an excercise in applying tailwindcss to styling
 a react app whilst making extensive use of react hooks and Functional components.
@@ -80,6 +83,9 @@ of [react scripts](https://www.npmjs.com/package/react-scripts) to prevent
 ejecting from [cra](https://www.npmjs.com/package/react-scripts) which was used
 to scaffold the app.
 
+All code written in functional Es6 all the way -- NO CLASSES :fist
+
+Next steps would be to complete the features and write tests.
 
 ### Backend API
 
