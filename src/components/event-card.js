@@ -32,13 +32,23 @@ export default ({ event }) => {
 
   return (
     <div className='relative event-wrapper shadow bg-white' >
-      {
-        event.premiumOnly && <div className='absolute right-0 pr-3'>
+      <div className='absolute right-0 pr-3'>
+        {
+          event.premiumOnly &&
           <span
-            className='leading-tight font-bold text-xs italic text-green-500 -mt-1 border border-green-300 rounded px-1 bg-white'>
-            Premium Only!</span>
-        </div>
-      }
+              className='leading-tight font-bold text-xs italic text-green-500 -mt-1 border border-green-300 rounded px-1 bg-white'>Premium Only!</span>
+        }
+        {
+          event.eventType === 'leap' &&
+            <span
+              className='leading-tight font-bold text-xs italic text-blue-500 -mt-1 border border-blue-300 rounded px-1 bg-white'>Leap</span>
+        }
+        {
+          event.eventType === 'vanhackathon' &&
+            <span
+              className='leading-tight font-bold text-xs italic text-blue-500 -mt-1 border border-blue-300 rounded px-1 bg-white'>Vanhackathon</span>
+        }
+      </div>
       <div className='event-banner'>
         <img className='md:w-full' src={event.photo} alt='' />
       </div>
